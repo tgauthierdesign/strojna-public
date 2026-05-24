@@ -767,7 +767,7 @@
     <div class="footer-legal">
       © 2026 Strojna — Tous droits réservés
     </div>
-    <div class="footer-updated">Mis à jour le 24/05/2026 à 22:44</div>
+    <div class="footer-updated">Mis à jour le 24/05/2026 à 22:46</div>
   </footer>
 
 </div>
@@ -820,6 +820,50 @@
     return false;
   }
 
+  function nextOpening() {
+    var now   = new Date();
+    var dow   = now.getDay();
+    var mins  = now.getHours() * 60 + now.getMinutes();
+    var reg   = HOURS.regular || {};
+    var ext   = HOURS.extended || {};
+    var jours = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+
+    function openSlotForDow(d) {
+      var weekday = (d >= 1 && d <= 5);
+      var slots = [];
+      if (reg['lun-ven'] && weekday) slots.push(reg['lun-ven']);
+      if (ext['lun-dim'])            slots.push(ext['lun-dim']);
+      if (ext['lun-sam'] && (weekday || d === 6)) slots.push(ext['lun-sam']);
+      var earliest = null;
+      for (var i = 0; i < slots.length; i++) {
+        var parts = slots[i].split(' - ');
+        if (parts.length === 2) {
+          var t = parseHHMM(parts[0].trim());
+          if (earliest === null || t < earliest) earliest = t;
+        }
+      }
+      return earliest;
+    }
+
+    for (var delta = 0; delta <= 7; delta++) {
+      var d = (dow + delta) % 7;
+      var openMin = openSlotForDow(d);
+      if (openMin !== null) {
+        if (delta === 0 && mins < openMin) {
+          var h = Math.floor(openMin / 60);
+          return 'Ouvre aujourd'hui à ' + h + 'h';
+        } else if (delta === 1) {
+          var h2 = Math.floor(openSlotForDow(d) / 60);
+          return 'Ouvre demain à ' + h2 + 'h';
+        } else if (delta > 1) {
+          var h3 = Math.floor(openMin / 60);
+          return 'Ouvre ' + jours[d] + ' à ' + h3 + 'h';
+        }
+      }
+    }
+    return null;
+  }
+
   var badge = document.getElementById('status-badge');
   var text  = document.getElementById('status-text');
   if (badge && text) {
@@ -828,7 +872,8 @@
       text.textContent = 'Ouvert maintenant';
     } else {
       badge.classList.add('closed');
-      text.textContent = 'Fermé';
+      var nextLabel = nextOpening();
+      text.textContent = 'Fermé' + (nextLabel ? ' • ' + nextLabel : '');
     }
   }
 })();
