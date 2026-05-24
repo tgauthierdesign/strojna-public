@@ -247,6 +247,59 @@
     .formule-price { font-weight: 700; font-size: 1.25rem; color: var(--primary); margin: .2rem 0; }
     .formule-includes { font-size: .825rem; color: var(--text-sec); }
 
+    /* ── RETROUVEZ-NOUS ── */
+    .find-us-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-bottom: .75rem;
+    }
+    .find-us-card {
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .2rem;
+      text-decoration: none;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .find-us-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+    .find-us-insta {
+      background: linear-gradient(135deg, #fdf0f8, #fce4f3);
+      border: 1px solid #e8a0d0;
+    }
+    .find-us-maps {
+      background: linear-gradient(135deg, #f0f4ff, #e4ecff);
+      border: 1px solid #a0b8f0;
+    }
+    .find-us-icon { font-size: 1.5rem; }
+    .find-us-label {
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--text-muted);
+      margin-top: .25rem;
+    }
+    .find-us-value {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .find-us-cta {
+      font-size: .78rem;
+      color: var(--primary);
+      font-weight: 600;
+      margin-top: .2rem;
+    }
+    .find-us-insta .find-us-cta { color: #c2185b; }
+    .find-us-maps .find-us-cta { color: #1565c0; }
+    .find-us-address {
+      font-size: .8rem;
+      color: var(--text-sec);
+      margin-top: .125rem;
+    }
+
     /* ── GALERIE PHOTOS ── */
     .gallery-grid {
       display: grid;
@@ -415,10 +468,32 @@
     </div>
   </section>
 
-  <!-- ④bis GALERIE -->
-  <section><div class="section-title">📸 En images</div><div class="gallery-grid"><a href="photos/google_00.jpg" onclick="openLb(this);return false;"><img src="photos/google_00.jpg" alt="Strojna 1" loading="lazy"></a><a href="photos/google_01.jpg" onclick="openLb(this);return false;"><img src="photos/google_01.jpg" alt="Strojna 2" loading="lazy"></a><a href="photos/google_02.jpg" onclick="openLb(this);return false;"><img src="photos/google_02.jpg" alt="Strojna 3" loading="lazy"></a><a href="photos/google_03.jpg" onclick="openLb(this);return false;"><img src="photos/google_03.jpg" alt="Strojna 4" loading="lazy"></a><a href="photos/google_04.jpg" onclick="openLb(this);return false;"><img src="photos/google_04.jpg" alt="Strojna 5" loading="lazy"></a><a href="photos/google_05.jpg" onclick="openLb(this);return false;"><img src="photos/google_05.jpg" alt="Strojna 6" loading="lazy"></a><a href="photos/google_06.jpg" onclick="openLb(this);return false;"><img src="photos/google_06.jpg" alt="Strojna 7" loading="lazy"></a><a href="photos/google_07.jpg" onclick="openLb(this);return false;"><img src="photos/google_07.jpg" alt="Strojna 8" loading="lazy"></a><a href="photos/google_08.jpg" onclick="openLb(this);return false;"><img src="photos/google_08.jpg" alt="Strojna 9" loading="lazy"></a><a href="photos/google_09.jpg" onclick="openLb(this);return false;"><img src="photos/google_09.jpg" alt="Strojna 10" loading="lazy"></a></div><p class="gallery-source">📍 Photos Google Maps — Strojna Perros-Guirec</p></section>
+  <!-- ⑤ RETROUVEZ-NOUS (Instagram + Maps) -->
+  <section>
+    <div class="section-title">📍 Retrouvez-nous</div>
+    <div class="find-us-grid">
+      <a class="find-us-card find-us-insta" href="https://www.instagram.com/strojnaperros/" target="_blank" rel="noopener">
+        <span class="find-us-icon">📸</span>
+        <span class="find-us-label">Instagram</span>
+        <span class="find-us-value">@strojnaperros</span>
+        <span class="find-us-cta">Voir nos photos →</span>
+      </a>
+      <a class="find-us-card find-us-maps" href="https://www.google.com/maps/place/Strojna/" target="_blank" rel="noopener">
+        <span class="find-us-icon">📍</span>
+        <span class="find-us-label">Adresse</span>
+        <span class="find-us-value">Port de Perros-Guirec</span>
+        <span class="find-us-cta">Ouvrir Maps →</span>
+      </a>
+    </div>
+    <p class="find-us-address">72 Rue Ernest Renan, Port de plaisance, 22700 Perros-Guirec — 🅿️ Parking de la Rade / Esplanade de la Douane</p>
+    <div class="google-rating" style="margin-top:.75rem">
+      <span class="stars">★★★★★</span>
+      <span class="rating-num">5.0</span>
+      <span class="rating-count">(80 avis Google)</span>
+    </div>
+  </section>
 
-  <!-- ⑤ MENU -->
+  <!-- ⑥ MENU -->
   <section>
     <div class="section-title">🥪 Notre menu</div>
 
@@ -684,35 +759,15 @@
     </div>
   </section>
 
-  <!-- ⑥ LOCALISATION -->
-  <section>
-    <div class="section-title">📍 Nous trouver</div>
-    <div class="location-address">
-      <strong>Strojna</strong><br>
-      72 Rue Ernest Renan, Port de plaisance, 22700 Perros-Guirec<br>
-      <span class="location-detail">🅿️ Parking de la Rade / Esplanade de la Douane</span>
-    </div>
-    <a class="btn-maps" href="https://www.google.com/maps/place/Strojna/" target="_blank" rel="noopener">
-      📍 Ouvrir dans Google Maps
-    </a>
-  </section>
+  <!-- ⑦ GALERIE -->
+  <section><div class="section-title">📸 En images</div><div class="gallery-grid"><a href="photos/google_00.jpg" onclick="openLb(this);return false;"><img src="photos/google_00.jpg" alt="Strojna 1" loading="lazy"></a><a href="photos/google_01.jpg" onclick="openLb(this);return false;"><img src="photos/google_01.jpg" alt="Strojna 2" loading="lazy"></a><a href="photos/google_02.jpg" onclick="openLb(this);return false;"><img src="photos/google_02.jpg" alt="Strojna 3" loading="lazy"></a><a href="photos/google_03.jpg" onclick="openLb(this);return false;"><img src="photos/google_03.jpg" alt="Strojna 4" loading="lazy"></a><a href="photos/google_04.jpg" onclick="openLb(this);return false;"><img src="photos/google_04.jpg" alt="Strojna 5" loading="lazy"></a><a href="photos/google_05.jpg" onclick="openLb(this);return false;"><img src="photos/google_05.jpg" alt="Strojna 6" loading="lazy"></a><a href="photos/google_06.jpg" onclick="openLb(this);return false;"><img src="photos/google_06.jpg" alt="Strojna 7" loading="lazy"></a><a href="photos/google_07.jpg" onclick="openLb(this);return false;"><img src="photos/google_07.jpg" alt="Strojna 8" loading="lazy"></a><a href="photos/google_08.jpg" onclick="openLb(this);return false;"><img src="photos/google_08.jpg" alt="Strojna 9" loading="lazy"></a><a href="photos/google_09.jpg" onclick="openLb(this);return false;"><img src="photos/google_09.jpg" alt="Strojna 10" loading="lazy"></a></div><p class="gallery-source">📍 Photos Google Maps — Strojna Perros-Guirec</p></section>
 
-  <!-- ⑦ FOOTER -->
+  <!-- ⑧ FOOTER -->
   <footer>
-    <div class="footer-social">
-      <a class="btn-social btn-instagram" href="https://www.instagram.com/strojnaperros/" target="_blank" rel="noopener">
-        📸 @strojnaperros
-      </a>
-    </div>
-    <div class="google-rating">
-      <span class="stars">★★★★★</span>
-      <span class="rating-num">5.0</span>
-      <span class="rating-count">(80 avis Google)</span>
-    </div>
     <div class="footer-legal">
       © 2026 Strojna — Tous droits réservés
     </div>
-    <div class="footer-updated">Mis à jour le 24/05/2026 à 22:38</div>
+    <div class="footer-updated">Mis à jour le 24/05/2026 à 22:44</div>
   </footer>
 
 </div>
