@@ -108,30 +108,53 @@
     }
 
     /* ── HORAIRES ── */
-    .hours-period {
-      font-size: .8rem;
-      color: var(--text-muted);
-      margin-bottom: .625rem;
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-top: .25rem;
     }
-    .hours-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
-    .hours-table td { padding: .3rem 0; }
-    .hours-table td:last-child { text-align: right; font-weight: 500; }
-    .hs-row td { color: var(--text-sec); }
-    .hs-tag {
-      font-size: .7rem;
-      background: var(--accent-bg);
-      color: var(--accent);
-      border-radius: var(--radius-full);
-      padding: .1rem .45rem;
-      font-weight: 600;
+    .hours-card {
+      border-radius: var(--radius-md);
+      padding: .875rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: .25rem;
     }
-    .hours-note {
-      margin-top: .75rem;
-      font-size: .8rem;
-      color: var(--text-sec);
+    .hours-card.regular {
       background: var(--bg-alt);
-      border-radius: var(--radius-sm);
-      padding: .5rem .75rem;
+      border: 1px solid var(--border);
+    }
+    .hours-card.summer {
+      background: linear-gradient(135deg, #fff8ed, #fff3e0);
+      border: 1px solid #f4a94e;
+    }
+    .hours-card-icon { font-size: 1.25rem; margin-bottom: .125rem; }
+    .hours-card-label {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text-muted);
+    }
+    .hours-card.summer .hours-card-label { color: #c47a1a; }
+    .hours-card-days {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: .125rem;
+    }
+    .hours-card-time {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -.02em;
+    }
+    .hours-card.summer .hours-card-time { color: #d4821a; }
+    .hours-card-sub {
+      font-size: .72rem;
+      color: var(--text-sec);
+      margin-top: .1rem;
     }
 
     /* ── BANNIÈRE EXCEPTIONNELLE ── */
@@ -325,11 +348,22 @@
   <!-- ④ HORAIRES -->
   <section>
     <div class="section-title">🕐 Horaires d'ouverture</div>
-    <p class='hours-period'>Période : Mai-Juillet 2026</p>
-    <table class="hours-table">
-      <tr><td>Lun-ven</td><td>11:00 - 15:00</td></tr><tr class="hs-row"><td>Lun-dim</td><td>11:00 - 17:00 <span class="hs-tag">haute saison</span></td></tr>
-    </table>
-    <p class='hours-note'>ℹ️ Week-ends ouverts en haute saison et vacances</p>
+    <div class="hours-grid">
+      
+    <div class="hours-card regular">
+      <div class="hours-card-icon">📅</div>
+      <div class="hours-card-label">Toute l'année</div>
+      <div class="hours-card-days">Lundi — Vendredi</div>
+      <div class="hours-card-time">11:00 - 15:00</div>
+    </div>
+    <div class="hours-card summer">
+      <div class="hours-card-icon">☀️</div>
+      <div class="hours-card-label">Juillet — Août</div>
+      <div class="hours-card-days">Lundi — Dimanche</div>
+      <div class="hours-card-time">11:00 - 17:00</div>
+      <div class="hours-card-sub">Week-ends &amp; jours fériés inclus</div>
+    </div>
+    </div>
   </section>
 
   <!-- ⑤ MENU -->
@@ -626,7 +660,7 @@
     <div class="footer-legal">
       © 2026 Strojna — Tous droits réservés
     </div>
-    <div class="footer-updated">Mis à jour le 24/05/2026 à 12:34</div>
+    <div class="footer-updated">Mis à jour le 24/05/2026 à 12:42</div>
   </footer>
 
 </div>
