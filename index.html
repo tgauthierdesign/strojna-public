@@ -607,7 +607,7 @@
   </header>
 
   <!-- ③ BANNIÈRE EXCEPTIONNELLE -->
-  
+  <!-- BEGIN:BANNIERE --><!-- END:BANNIERE -->
 
   <!-- ④ HORAIRES + ⑤ RETROUVEZ-NOUS → wrapper sidebar desktop -->
   <div class="col-sidebar">
@@ -616,7 +616,7 @@
   <section>
     <div class="section-title">🕐 Horaires d'ouverture</div>
     <div class="hours-grid">
-      
+      <!-- BEGIN:HOURS_CARDS -->
     <div class="hours-card regular">
       <div class="hours-card-icon">📅</div>
       <div class="hours-card-label">Toute l'année</div>
@@ -629,7 +629,7 @@
       <div class="hours-card-days">Lundi — Dimanche</div>
       <div class="hours-card-time">11:00 - 15:00</div>
       <div class="hours-card-sub">Week-ends &amp; jours fériés inclus</div>
-    </div>
+    </div><!-- END:HOURS_CARDS -->
     </div>
   </section>
 
@@ -661,6 +661,7 @@
   </div><!-- /.col-sidebar -->
 
   <!-- ⑥ MENU -->
+  <!-- BEGIN:MENU -->
   <section>
     <div class="section-title">🥪 Notre menu</div>
 
@@ -722,8 +723,9 @@
     </div>
 
     <div class="menu-cat">
-      <div class="cat-title">Formules</div>
-      
+      <div class="cat-title">🍽️ Formules</div>
+      <div class="formules-grid">
+        
         <div class="formule-card">
           <div class="formule-name">Menu Sandwich</div>
           <div class="formule-price">13,00 €</div>
@@ -739,10 +741,11 @@
           <div class="formule-price">15,00 €</div>
           <div class="formule-includes">Sandwich ou salade sur mesure + Canette 33cl + Cookie</div>
         </div>
+      </div>
     </div>
 
     <div class="menu-cat">
-      <div class="cat-title">Boissons chaudes</div>
+      <div class="cat-title">☕ Boissons chaudes</div>
       
         <div class="menu-item compact">
           <div class="item-header">
@@ -811,7 +814,7 @@
     </div>
 
     <div class="menu-cat">
-      <div class="cat-title">Softs &amp; Jus</div>
+      <div class="cat-title">🧃 Softs &amp; Boissons frîches</div>
       
         <div class="menu-item compact">
           <div class="item-header">
@@ -851,7 +854,7 @@
     </div>
 
     <div class="menu-cat">
-      <div class="cat-title">Bières, Vins &amp; Alcools</div>
+      <div class="cat-title">🍻 Bières &amp; Vins</div>
       
         <div class="menu-item compact">
           <div class="item-header">
@@ -924,17 +927,19 @@
           
         </div>
     </div>
+
   </section>
+<!-- END:MENU -->
 
   <!-- ⑦ GALERIE -->
-  
+  <!-- BEGIN:GALERIE --><!-- END:GALERIE -->
 
   <!-- ⑧ FOOTER -->
   <footer>
     <div class="footer-legal">
       © 2026 Strojna — Tous droits réservés
     </div>
-    <div class="footer-updated">Mis à jour le 26/05/2026 à 08:56</div>
+    <!-- BEGIN:FOOTER_DATE --><div class="footer-updated">Mis à jour le 26/05/2026 à 09:14</div><!-- END:FOOTER_DATE -->
   </footer>
 
 </div>
@@ -943,7 +948,11 @@
 <script>
 (function() {
   // Horaires injectés par le pipeline
+  // BEGIN:HOURS_JS
+  
+  
   var HOURS = {"current_period": "Mai-Juillet 2026", "regular": {"lun-ven": "11:00 - 15:00"}, "extended": {"lun-dim": "11:00 - 15:00", "note": "Week-ends ouverts en haute saison et vacances"}};
+  // END:HOURS_JS
 
   function parseHHMM(s) {
     var p = s.split(':');
