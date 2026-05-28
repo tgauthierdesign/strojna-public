@@ -205,6 +205,9 @@
       border-bottom: 2px solid var(--primary-subtle);
       padding-bottom: .35rem;
       margin-bottom: .75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .menu-item { padding: .5rem 0; border-bottom: 1px solid var(--border); }
     .menu-item:last-of-type { border-bottom: none; }
@@ -248,7 +251,8 @@
       border-radius: var(--radius-full);
       padding: .1rem .45rem;
       vertical-align: middle;
-      margin-right: .25rem;
+      margin-left: .5rem;
+      flex-shrink: 0;
     }
     .formule-card {
       background: linear-gradient(135deg, var(--primary-subtle), var(--bg-alt));
@@ -700,7 +704,7 @@
     </div>
 
     <div class="menu-cat">
-      <div class="cat-title"><span class="badge-new">NOUVEAU</span> Triangles — 6,50 €</div>
+      <div class="cat-title">Triangles — 6,50 €<span class="badge-new">NOUVEAU</span></div>
       <p class="triangle-desc">Pain de mie au curry fait maison</p>
         <div class="menu-item compact">
           <div class="item-header">
